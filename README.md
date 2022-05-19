@@ -9,7 +9,7 @@ Classification via Entropic Regularization". We also provide the hyperspectral d
 4 (optional). Cub dataset: https://deepai.org/dataset/cub-200-2011
 
 ## Datasets
-Expect for Age estimation and Cub, the code will download automatically dataset of CIFARFS.
+Except for Age estimation and Cub, the code will download automatically dataset of CIFARFS.
 
 ### Age Estimation:
 it is required to run the following commands to pre-process the dataset (https://github.com/SITE5039/AdaMixUp)
