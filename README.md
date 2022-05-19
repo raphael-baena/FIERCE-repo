@@ -8,7 +8,7 @@ Classification via Entropic Regularization". We also provide the hyperspectral d
 3 (optional). Age estimation dataset https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/: IMDB (faces only) and WIKI (faces only)
 4 (optional). Cub dataset: https://deepai.org/dataset/cub-200-2011
 
-## Datasets:
+## Datasets
 Expect for Age estimation and Cub, the code will download automatically dataset of CIFARFS.
 
 ### Age Estimation:
@@ -18,7 +18,8 @@ $ python datasets/process_data_wiki_imdb.py --rootpath 'path/data/wiki_crop' --m
 ### CUBS
 
 
-## Experiments:
+## Experiments
+
 ### Hyperspectral (folder hyperspectral)
 - Experiments and ablation studies can be carried out with the notebooks:
 
@@ -28,14 +29,13 @@ $ python main.py --alpha 0 --step 100 (Vanilla)
 $ python main.py --alpha 0.2 --step 100 (FIERCE with parameter 0.3)
 $ python ls.py (Label Smoothing)
 
-###CUbs:
-We use the split recommanded in Hu, Y., Gripon, V., & Pateux, S. (2020). Exploiting unsupervised inputs for accurate few-shot classification.
-
 models:
 - We provide also 3 saved models: model_vanilla.pt (Cross-Entropy Criterion), model_fierce_0.2.pt (FIERCE with parameter 0.2), model_ls.pt (label smoothing)
-
 plotting results & statistics:
 - use notebook:
+
+### CUbs
+We use the split recommanded in Hu, Y., Gripon, V., & Pateux, S. (2020). Exploiting unsupervised inputs for accurate few-shot classification.
 
 ### Few Shot Experiments
 training Cifas and print statistics
