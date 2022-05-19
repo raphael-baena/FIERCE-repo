@@ -5,8 +5,8 @@ Classification via Entropic Regularization". We also provide the hyperspectral d
 ## Requirements and Installation:
 1. A Pytorch installation https://pytorch.org
 2. Python version 3.8.1 (lower versions might not work)
-3 (optional). Age estimation dataset https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/: IMDB (faces only) and WIKI (faces only)
-4 (optional). Cub dataset: https://deepai.org/dataset/cub-200-2011
+3. (optional) Age estimation dataset https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/: IMDB (faces only) and WIKI (faces only)
+4. (optional) Cub dataset: https://deepai.org/dataset/cub-200-2011
 
 ## Datasets
 Age estimation and Cub required to download manually the dataests.
