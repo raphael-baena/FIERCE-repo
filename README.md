@@ -15,8 +15,9 @@ Expect for Age estimation and Cub, the code will download automatically dataset 
 it is required to run the following commands to pre-process the dataset (https://github.com/SITE5039/AdaMixUp)
 $ python datasets/process_data_wiki_imdb.py --rootpath 'path/imdb_crop' --metafile 'imdb' --outfile  'imdbfilelist.txt'
 $ python datasets/process_data_wiki_imdb.py --rootpath 'path/data/wiki_crop' --metafile 'wiki' --outfile  'wikifilelist.txt'
-### CUBS
 
+### CUBS
+We use the split recommanded in Hu, Y., Gripon, V., & Pateux, S. (2020). Exploiting unsupervised inputs for accurate few-shot classification.
 
 ## Experiments
 
@@ -34,8 +35,6 @@ models:
 plotting results & statistics:
 - use notebook:
 
-### CUbs
-We use the split recommanded in Hu, Y., Gripon, V., & Pateux, S. (2020). Exploiting unsupervised inputs for accurate few-shot classification.
 
 ### Few Shot Experiments
 training Cifas and print statistics
