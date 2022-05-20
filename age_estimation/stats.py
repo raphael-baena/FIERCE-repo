@@ -223,7 +223,7 @@ def test(model, test_loader):
             all_features.append(features.reshape(features.shape[0]))
             test_loss += criterion(output, target.long()).item()
             pred = output #.argmax(dim=1, keepdim=True)
-            all_preds.append(pred)
+            all_preds.append(pred.softmax(-1))
         
             total_elts += target.shape[0]
             if total_elts >= 10000:
