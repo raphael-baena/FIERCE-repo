@@ -24,7 +24,7 @@ We use the split recommanded in Hu, Y., Gripon, V., & Pateux, S. (2020). Exploit
 ### Hyperspectral (folder **hyperspectral**)
 - Experiments and ablation studies can be carried out with the notebook: **Experiments_Hyperspectral.ipnyb**
 
-### Age regression (folder age_regression)
+### Age regression (folder **age_regression**)
 training and saving results:
 ```
 $ python main.py 0  100 (Vanilla)
