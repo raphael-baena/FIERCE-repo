@@ -121,11 +121,9 @@ def mutual_information(preds):
 
 
 
-def calc_bins(preds,ages):
+def calc_bins(preds,targets):
   # Assign each prediction to a bin
-  preds_hard = torch.zeros_like(torch.tensor(preds))
-  preds_hard[ages>=36] = 1
-  labels_oneh = preds_hard
+  labels_oneh = F.one_hot(targets,2)
   num_bins = 10
   bins = np.linspace(0.1, 1, num_bins)
   binned = np.digitize(preds, bins)
@@ -143,10 +141,10 @@ def calc_bins(preds,ages):
 
   return bins, binned, bin_accs, bin_confs, bin_sizes
 
-def get_metrics(preds,ages):
+def get_metrics(preds,targets):
   ECE = 0
   MCE = 0
-  bins, _, bin_accs, bin_confs, bin_sizes = calc_bins(preds,ages)
+  bins, _, bin_accs, bin_confs, bin_sizes = calc_bins(preds,targets)
 
   for i in range(len(bins)):
     abs_conf_dif = abs(bin_accs[i] - bin_confs[i])
@@ -156,9 +154,9 @@ def get_metrics(preds,ages):
   return ECE, MCE
 import matplotlib.patches as mpatches
 
-def draw_reliability_graph(preds,ages):
-  ECE, MCE = get_metrics(preds,ages)
-  bins, _, bin_accs, _, _ = calc_bins(preds,ages)
+def draw_reliability_graph(preds,targets):
+  ECE, MCE = get_metrics(preds,targets)
+  bins, _, bin_accs, _, _ = calc_bins(preds,targets)
 
   fig = plt.figure(figsize=(8, 8))
   ax = fig.gca()
@@ -194,7 +192,7 @@ def draw_reliability_graph(preds,ages):
   
   plt.savefig('calibrated_network.png', bbox_inches='tight')
 
-def Stability(preds,targets):
+def Stability(preds):
   all_std = 0 
   for i in range(num_classes):
       single_std = preds[:,i].std(dim = 0)
@@ -209,6 +207,7 @@ def test(model, test_loader):
     all_ages = []
     all_features = []
     all_preds = []
+    all_targets = []
     with torch.no_grad():
         for batch_idx, (data, target, _) in enumerate(test_loader):
             data, age = data.to(device), target.to(device)
@@ -226,14 +225,16 @@ def test(model, test_loader):
             all_preds.append(pred.softmax(-1))
         
             total_elts += target.shape[0]
+            all_targets.append(target)
             if total_elts >= 10000:
                 break
-            
+        
     ages = torch.cat(all_ages).to("cpu") # all the ages associated with the samples
     features = torch.cat(all_features).to("cpu") # all the features
     preds = torch.cat(all_preds).to("cpu") # all the predictions
-    print("Stability",Stability(preds,target))
+    targets = torch.cat(all_targets).to("cpu")
+    print("Stability",Stability(preds))
     print("Mutual Information", mutual_information(preds))
-    draw_reliability_graph(preds.detach().numpy(),ages)
+    draw_reliability_graph(preds.detach().numpy(),targets.long())
 
 test(model,test_loader)
