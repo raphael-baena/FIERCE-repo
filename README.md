@@ -40,7 +40,7 @@ plotting results & statistics:
 training Cifas and print statistics
 $ python main.py --dataset cifarfs --model resnet18 --lr 0.1 --skip-epochs 300 --entropy 0 --runs 10 (Vanilla)
 $ python main.py --dataset cifarfs --model resnet18 --lr 0.1 --skip-epochs 300 --entropy 1.5 runs 10 (FIERE with parameter 1.5)
-$ python main.py --dataset cifarfs --model resnet18 --lr 0.1 --skip-epochs 300 --entropy 0 --label-smothing 0.1 runs 10 (Label Smoothing with parameter $\sigma$ = 0.1)
+$ python main.py --dataset cifarfs --model resnet18 --lr 0.1 --skip-epochs 300 --entropy 0 --label-smothing 0.1 runs 10 (Label Smoothing with parameter \sigma = 0.1)
 
 training Cubfs and print statistics
 $ python main.py --dataset cubfs --runs 10 --entropy-parameter 0 (Vanilla)
