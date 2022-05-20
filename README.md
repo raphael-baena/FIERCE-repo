@@ -27,9 +27,9 @@ We use the split recommanded in Hu, Y., Gripon, V., & Pateux, S. (2020). Exploit
 ### Age regression (folder age_regression)
 training and saving results:
 ```
-$ python main.py --alpha 0 --step 100 (Vanilla)
-$ python main.py --alpha 0.2 --step 100 (FIERCE with parameter 0.3)
-$ python ls.py (Label Smoothing)
+$ python main.py 0  100 (Vanilla)
+$ python main.py 0.2 100 (FIERCE with parameter 0.3)
+$ python ls.py 0 100(Label Smoothing)
 ```
 models:
 - We provide also 3 saved models: model_vanilla.pt (Cross-Entropy Criterion), model_fierce_0.2.pt (FIERCE with parameter 0.2), model_ls.pt (label smoothing)
