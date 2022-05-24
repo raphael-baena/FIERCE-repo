@@ -13,6 +13,7 @@ import sys
 from datasets import MyDatasets
 from torchvision import transforms
 import matplotlib.pyplot as plt
+data_set_path = "/users/local"
 
 path = str(sys.argv[1])
 num_classes = 2
@@ -87,11 +88,11 @@ model.load_state_dict(  torch.load(path,map_location=torch.device('cpu')))
 
 print(model)
 transformations = transforms.Compose([transforms.Resize((64,64)),transforms.ToTensor(),transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
-train_dataset = MyDatasets.IMDBWIKI('/users/local/r17baena/data/imdb_crop', '/users/local/r17baena/data/imdb_crop/imdbfilelist.txt', transformations, db='imdb')
+train_dataset = MyDatasets.IMDBWIKI('data_set_path/imdb_crop', 'data_set_path/imdb_crop/imdbfilelist.txt', transformations, db='imdb')
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=256, shuffle=True, num_workers=8, pin_memory=True, sampler=None)
 test_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size = 100, shuffle = False, num_workers = 8)
 print("computing thresholds ", end='')
-meta_data = open("/users/local/r17baena/data/imdb_crop/imdbfilelist.txt")
+meta_data = open("/data_set_path/imdb_crop/imdbfilelist.txt")
 all_vals = []
 try:
     while True:
