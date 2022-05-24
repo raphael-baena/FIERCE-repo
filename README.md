@@ -39,7 +39,7 @@ Label Smoothing
 ```
 $ python ls.py 0 100
 ```
-- plotting the results: with the notebook *Stats_age_regression.ipynb*. It is possible to plot the results (MSE, prediction) from the *feature.pt* file generated during the training of the model. We provide the features of the 3 models displayed in our paper (Cross-Entropy, Label Smoothing, FIERCE).
+- plotting the results: with the notebook *Stats_age_regression.ipynb*. It is possible to plot the results (MSE, prediction) from the file *features.pt* generated during the training of the model. We provide the features of the 3 models displayed in our paper (Cross-Entropy, Label Smoothing, FIERCE).
 
 models:
 - We provide also 3 saved models: model_vanilla.pt (Cross-Entropy Criterion), model_fierce_0.2.pt (FIERCE with parameter 0.2), model_ls.pt (label smoothing)
