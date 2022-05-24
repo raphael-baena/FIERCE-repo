@@ -16,7 +16,7 @@ it is required to run the following commands to pre-process the dataset (https:/
 $ python datasets/process_data_wiki_imdb.py --rootpath 'path/imdb_crop' --metafile 'imdb' --outfile  'imdbfilelist.txt'
 $ python datasets/process_data_wiki_imdb.py --rootpath 'path/data/wiki_crop' --metafile 'wiki' --outfile  'wikifilelist.txt'
 
-### CUBS
+### CUB
 We use the split recommanded in https://github.com/icoz69/DeepEMD.
 
 ## Experiments
