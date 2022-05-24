@@ -9,7 +9,7 @@ Classification via Entropic Regularization". We also provide the hyperspectral d
 4. (optional) CUB dataset: https://deepai.org/dataset/cub-200-2011
 
 ## Datasets
-Age estimation and CUB required to download manually the dataests.
+Age estimation and CUB required to download manually the datasets.
 
 ### Age Estimation:
 it is required to run the following commands to pre-process the dataset (https://github.com/SITE5039/AdaMixUp).
