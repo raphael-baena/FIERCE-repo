@@ -1,6 +1,6 @@
 # FIERCE-repo
-This repo contains the code for FIERCE, as presented in our paper "Preserving Fine-Grain Feature Information in
-Classification via Entropic Regularization". We also provide the hyperspectral dataset that we used in Section 5.2. Note that we do not provide the dataset age estimation (IMDB & WIKi) and CUB.
+This repo contains the code for FIERCE, as presented in our paper *Preserving Fine-Grain Feature Information in
+Classification via Entropic Regularizatio* (https://arxiv.org/abs/2208.03684). We also provide the hyperspectral dataset that we used in Section 5.2. Note that we do not provide the dataset age estimation (IMDB & WIKi) and CUB.
 
 ## Requirements and Installation:
 1. A Pytorch installation https://pytorch.org
